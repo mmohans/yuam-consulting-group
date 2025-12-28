@@ -2,7 +2,7 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       {/* HERO */}
-      <section className="max-w-6xl mx-auto px-6 py-24 text-center">
+      <section className="max-w-6xl mx-auto px-6 py-20 md:py-24 text-center">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
           <span className="text-orange-500">YUAM</span> Consulting Group
         </h1>
