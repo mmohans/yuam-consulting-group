@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "Free QA Readiness Checklist | YUAM Consulting Group",
+  description:
+    "Download a free QA readiness checklist to assess test coverage, automation maturity, and release readiness for your product.",
+};
+
+
 export default function QAChecklistPage() {
     return (
       <main className="min-h-screen bg-white text-slate-900">

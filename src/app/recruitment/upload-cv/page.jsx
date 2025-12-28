@@ -1,3 +1,10 @@
+export const metadata = {
+  title: "QA Recruitment & Staffing Services | YUAM Consulting Group",
+  description:
+    "Hire experienced QA engineers or submit your profile for QA roles. YUAM Consulting Group offers QA staffing and recruitment services.",
+};
+
+
 export default function RecruitmentPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">

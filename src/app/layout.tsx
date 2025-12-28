@@ -3,6 +3,12 @@
 import { useState } from "react";
 import "./globals.css";
 
+export const metadata = {
+  title: "QA Consulting & Automation Services | YUAM Consulting Group",
+  description:
+    "YUAM Consulting Group provides QA consulting, test automation, fractional QA leadership, and QA recruitment services for startups and growing businesses.",
+};
+
 export default function RootLayout({ children }) {
   const [menuOpen, setMenuOpen] = useState(false);
 
