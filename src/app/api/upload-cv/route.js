@@ -15,7 +15,7 @@ export async function POST(req) {
 
     console.log("Form submission received:", data);
 
-    // Later: connect email service here
+    // Email wiring will be added here next
 
     return NextResponse.json({ success: true });
   } catch (error) {
