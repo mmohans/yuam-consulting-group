@@ -1,7 +1,7 @@
 export default function HomePage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
-      {/* HERO SECTION */}
+      {/* HERO */}
       <section className="max-w-6xl mx-auto px-6 py-24 text-center">
         <h1 className="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
           <span className="text-orange-500">YUAM</span> Consulting Group
@@ -20,7 +20,7 @@ export default function HomePage() {
             href="/meet"
             className="bg-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition"
           >
-            Book a Free Consultation
+            Discuss QA Needs
           </a>
 
           <a
@@ -32,44 +32,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SERVICES SECTION */}
+      {/* SERVICES */}
       <section className="bg-slate-50 py-20">
         <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-4 gap-8 text-center">
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition">
-            <h3 className="font-semibold text-lg mb-2">QA Consulting</h3>
-            <p className="text-slate-600 text-sm">
-              End-to-end quality strategy aligned with business goals.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition">
-            <h3 className="font-semibold text-lg mb-2">Test Automation</h3>
-            <p className="text-slate-600 text-sm">
-              Scalable automation frameworks for faster releases.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition">
-            <h3 className="font-semibold text-lg mb-2">
-              Fractional QA Head
-            </h3>
-            <p className="text-slate-600 text-sm">
-              Senior QA leadership without full-time cost.
-            </p>
-          </div>
-
-          <div className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition">
-            <h3 className="font-semibold text-lg mb-2">
-              IT QA Recruitment
-            </h3>
-            <p className="text-slate-600 text-sm">
-              Hire proven QA talent that fits your team and culture.
-            </p>
-          </div>
+          {[
+            "QA Consulting",
+            "Test Automation",
+            "Fractional QA Head",
+            "QA Recruitment",
+          ].map((service) => (
+            <div
+              key={service}
+              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md hover:-translate-y-1 transition"
+            >
+              <h3 className="font-semibold text-lg mb-2">{service}</h3>
+              <p className="text-slate-600 text-sm">
+                Practical, scalable QA solutions aligned to business needs.
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
-      {/* LEAD MAGNET */}
+      {/* QA CHECKLIST LEAD MAGNET */}
       <section className="bg-orange-50 py-20">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -77,8 +62,9 @@ export default function HomePage() {
           </h2>
 
           <p className="text-slate-600 max-w-2xl mx-auto mb-8">
-            A practical checklist used by QA leaders to assess test coverage,
-            automation maturity, and release readiness for startups and growing teams.
+            A practical checklist used by QA leaders to quickly assess
+            test coverage, automation maturity, and release readiness
+            for startups and growing product teams.
           </p>
 
           <div className="max-w-md mx-auto bg-white p-6 rounded-xl shadow-sm">
@@ -86,21 +72,20 @@ export default function HomePage() {
               <input
                 type="email"
                 placeholder="Your work email"
-                className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
                 required
+                className="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
 
               <a
-                href="/YUAM_QA_Checklist.pdf"
-                target="_blank"
+                href="/qa-checklist"
                 className="block w-full bg-orange-500 text-white py-3 rounded-lg font-medium hover:bg-orange-600 transition text-center"
               >
-                Download Free Checklist (PDF)
+                Get the Free QA Checklist
               </a>
             </form>
 
             <p className="text-xs text-slate-500 mt-3">
-              No spam. Useful QA insights only.
+              Brand-safe. No spam. Useful QA insights only.
             </p>
           </div>
         </div>
