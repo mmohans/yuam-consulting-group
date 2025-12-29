@@ -109,15 +109,7 @@ export default function HowWeWorkPage() {
 
 /* ---------- Helper Components ---------- */
 
-function ProcessStep({
-  step,
-  title,
-  description,
-}: {
-  step: string;
-  title: string;
-  description: string;
-}) {
+function ProcessStep({ step, title, description }) {
   return (
     <div className="border rounded-xl p-6 bg-white">
       <div className="text-orange-600 font-bold text-sm mb-2">
@@ -129,13 +121,7 @@ function ProcessStep({
   );
 }
 
-function EngagementCard({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}) {
+function EngagementCard({ title, description }) {
   return (
     <div className="rounded-xl border p-6 bg-white text-center">
       <h3 className="text-lg font-semibold mb-3">{title}</h3>
