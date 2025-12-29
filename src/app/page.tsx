@@ -18,18 +18,19 @@ export default function HomePage() {
         <div className="flex justify-center gap-4 flex-wrap">
           <a
             href="/meet"
-            className="bg-orange-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-600 transition"
+            className="bg-orange-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-orange-700 transition"
           >
-            Discuss QA Needs
+            Request a QA Discussion
           </a>
 
           <a
-            href="/ai-qa-tools"
-            className="border border-orange-500 text-orange-500 px-6 py-3 rounded-lg font-medium hover:bg-orange-50 transition"
+            href="/qa-checklist"
+            className="border border-orange-600 text-orange-600 px-6 py-3 rounded-lg font-medium hover:bg-orange-50 transition"
           >
-            Explore AI QA Tools
+            Download QA Readiness Checklist
           </a>
         </div>
+
       </section>
 
       {/* SERVICES */}
