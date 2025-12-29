@@ -1,3 +1,11 @@
+export const metadata = {
+  title: "Schedule a QA Discussion | YUAM Consulting Group",
+  robots: {
+    index: false,
+    follow: false,
+  },
+};
+
 export default function MeetPage() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
