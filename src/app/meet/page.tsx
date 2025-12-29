@@ -13,7 +13,7 @@ export default function MeetPage() {
 
         <div className="w-full h-[700px] border rounded-lg overflow-hidden">
           <iframe
-            src="https://calendly.com/yuam-consulting/qa-consultation"
+            src="https://calendly.com/contact-yuamconsultinggroup/"
             width="100%"
             height="100%"
             frameBorder="0"
