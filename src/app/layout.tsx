@@ -4,8 +4,17 @@ import Header from "./components/Header";
 export const metadata = {
   title: "QA Consulting & Automation Services | YUAM Consulting Group",
   description:
-    "YUAM Consulting Group provides QA consulting, test automation, fractional QA leadership, and QA recruitment services for startups and growing businesses.",
+    "YUAM Consulting Group provides QA consulting, test automation, fractional QA leadership, and QA recruitment services.",
+  openGraph: {
+    title: "YUAM Consulting Group",
+    description:
+      "QA consulting, automation, fractional QA leadership, and QA recruitment for startups and growing teams.",
+    url: "https://yuamconsultinggroup.in",
+    siteName: "YUAM Consulting Group",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({ children }) {
   return (
