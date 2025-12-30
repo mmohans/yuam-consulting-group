@@ -28,6 +28,14 @@ export default function MeetPage() {
             title="Schedule a meeting with YUAM Consulting Group"
           />
         </div>
+
+        <p className="text-sm text-slate-500 mt-6 text-center">
+          Having trouble booking?{" "}
+          <a href="/contact" className="text-orange-600 underline">
+            Use our contact form instead
+          </a>
+        </p>
+
       </section>
     </main>
   );
