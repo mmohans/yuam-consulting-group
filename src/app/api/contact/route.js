@@ -20,8 +20,8 @@ export async function POST(req) {
       },
       body: JSON.stringify({
         // ⚠️ MUST be a verified domain in Resend
-        from: "YUAM Consulting <contact@yuamconsultinggroup.in>",
-        to: ["contact@yuamconsultinggroup.in"],
+        from: "YUAM Consulting <contact@yuamconsultinggroup.com>",
+        to: ["contact@yuamconsultinggroup.com"],
         reply_to: email,
         subject: `New QA Inquiry – ${qaNeeds || "General"}`,
         html: `
