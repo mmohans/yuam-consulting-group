@@ -4,52 +4,64 @@ export async function POST(req) {
   try {
     const body = await req.json();
 
-    // Honeypot check (spam protection)
+    // Honeypot (spam protection)
     if (body._honeypot) {
       return NextResponse.json({ success: true });
     }
 
-    const {
-      name,
-      email,
-      company,
-      qaNeeds,
-      message,
-    } = body;
+    const { name, email, company, qaNeeds, message } = body;
 
-    /* ---------- SEND EMAIL VIA RESEND HTTP API ---------- */
-    const res = await fetch("https://api.resend.com/emails", {
+    /* ---------- EMAIL VIA RESEND ---------- */
+    const emailRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "YUAM Consulting <no-reply@yuamconsultinggroup.in>",
+        // ⚠️ MUST be a verified domain in Resend
+        from: "YUAM Consulting <contact@yuamconsultinggroup.in>",
         to: ["contact@yuamconsultinggroup.in"],
         reply_to: email,
         subject: `New QA Inquiry – ${qaNeeds || "General"}`,
         html: `
-          <h2>New Contact Request</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Company:</strong> ${company || "Not provided"}</p>
-          <p><strong>QA Need:</strong> ${qaNeeds || "Not specified"}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message}</p>
+          <h3>New Contact Request</h3>
+          <p><b>Name:</b> ${name}</p>
+          <p><b>Email:</b> ${email}</p>
+          <p><b>Company:</b> ${company || "-"}</p>
+          <p><b>QA Need:</b> ${qaNeeds || "-"}</p>
+          <p><b>Message:</b><br/>${message}</p>
         `,
       }),
     });
 
-    if (!res.ok) {
-      console.error("Resend error", await res.text());
-      return NextResponse.json({ success: false }, { status: 500 });
+    if (!emailRes.ok) {
+      const errorText = await emailRes.text();
+      console.error("❌ Resend error:", errorText);
+
+      return NextResponse.json(
+        { success: false, error: "Email delivery failed" },
+        { status: 500 }
+      );
+    }
+
+    /* ---------- SLACK ALERT (OPTIONAL) ---------- */
+    if (process.env.SLACK_WEBHOOK_URL) {
+      await fetch(process.env.SLACK_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          text: `📩 *New YUAM Lead*\n*Name:* ${name}\n*Email:* ${email}\n*Company:* ${company || "-"}\n*Need:* ${qaNeeds || "-"}\n*Message:* ${message}`,
+        }),
+      });
     }
 
     return NextResponse.json({ success: true });
-
-  } catch (error) {
-    console.error("Contact API error:", error);
-    return NextResponse.json({ success: false }, { status: 500 });
+  } catch (err) {
+    console.error("❌ Contact API crash:", err);
+    return NextResponse.json(
+      { success: false, error: "Server error" },
+      { status: 500 }
+    );
   }
 }
