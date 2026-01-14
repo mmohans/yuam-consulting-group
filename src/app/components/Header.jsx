@@ -26,6 +26,10 @@ export default function Header() {
           <a href="/recruitment/upload-cv" className="hover:text-orange-500">
             Recruitment
           </a>
+          {/* NEW: Learning link */}
+          <a href="/learning" className="hover:text-orange-500">
+            Learning
+          </a>
           <a
             href="/meet"
             className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-orange-600 transition"
@@ -62,6 +66,10 @@ export default function Header() {
               onClick={() => setMenuOpen(false)}
             >
               Recruitment
+            </a>
+            {/* NEW: Learning link */}
+            <a href="/learning" onClick={() => setMenuOpen(false)}>
+              Learning
             </a>
             <a
               href="/meet"
