@@ -1,0 +1,2 @@
+export const metadata={title:"Rules vs Learning | AI Basics"};
+export default function Page(){return(<main className="max-w-3xl mx-auto px-6 py-20"><h1 className="text-4xl font-bold mb-6">Rules vs Learning</h1><p className="text-slate-600">Rule-based systems follow instructions; learning systems adapt from data.</p></main>);}

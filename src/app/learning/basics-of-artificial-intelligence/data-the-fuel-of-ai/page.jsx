@@ -1,0 +1,2 @@
+export const metadata={title:"Data – The Fuel of AI | AI Basics"};
+export default function Page(){return(<main className="max-w-3xl mx-auto px-6 py-20"><h1 className="text-4xl font-bold mb-6">Data – The Fuel of AI</h1><p className="text-slate-600">AI systems learn from data. Data quality determines AI quality.</p></main>);}

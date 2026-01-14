@@ -1,0 +1,2 @@
+export const metadata={title:"Narrow vs General AI | AI Basics"};
+export default function Page(){return(<main className="max-w-3xl mx-auto px-6 py-20"><h1 className="text-4xl font-bold mb-6">Narrow vs General AI</h1><p className="text-slate-600">All current AI is narrow, task-specific AI.</p></main>);}

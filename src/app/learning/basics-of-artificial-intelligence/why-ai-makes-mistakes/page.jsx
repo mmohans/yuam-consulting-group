@@ -1,0 +1,2 @@
+export const metadata={title:"Why AI Makes Mistakes | AI Basics"};
+export default function Page(){return(<main className="max-w-3xl mx-auto px-6 py-20"><h1 className="text-4xl font-bold mb-6">Why AI Makes Mistakes</h1><p className="text-slate-600">AI errors come from data bias and uncertainty.</p></main>);}

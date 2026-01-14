@@ -1,0 +1,2 @@
+export const metadata={title:"AI vs ML vs Deep Learning | AI Basics"};
+export default function Page(){return(<main className="max-w-3xl mx-auto px-6 py-20"><h1 className="text-4xl font-bold mb-6">AI vs ML vs Deep Learning</h1><p className="text-slate-600">AI is the umbrella, ML is a subset, DL is deeper ML.</p></main>);}
